@@ -1,0 +1,170 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa; /* 편안한 연회색 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#todo-input:focus {
+    border-color: #74c0fc; /* 부드러운 블루 포인트 */
+}
+
+#add-btn {
+    padding: 12px 20px;
+    background-color: #4dabf7;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+#add-btn:hover {
+    background-color: #339af0;
+}
+
+/* Todo List Item */
+.todo-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f3f5;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-text {
+    flex: 1;
+    margin-left: 10px;
+    color: #495057;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.completed .todo-text {
+    color: #adb5bd;
+    text-decoration: line-through;
+}
+
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4dabf7;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ffc9c9;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.delete-btn:hover {
+    color: #ff6b6b;
+}
+
+/* 리스트 개별 칸 스타일 */
+.todo-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 12px; /* 칸 사이의 간격 */
+    background-color: #f1f7ff; /* 부드러운 파스텔톤 배경색 */
+    border-radius: 15px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02); /* 살짝 떠 있는 느낌 */
+    transition: all 0.3s ease;
+}
+
+/* 완료된 항목의 칸 색상을 흐리게 변경 */
+.completed {
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+/* 삭제 버튼: 동그란 원형 디자인 */
+.delete-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* 완전한 원형 */
+    border: none;
+    background-color: #ff8787;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-left: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #fa5252;
+    transform: scale(1.1); /* 마우스 올리면 살짝 커짐 */
+}
+
+/* 체크박스와 텍스트 사이 간격 */
+.todo-text {
+    flex: 1;
+    margin-left: 15px;
+    font-weight: 500;
+}
