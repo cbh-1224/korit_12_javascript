@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Shopping List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./shoppinglist.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">    
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>쇼핑 리스트</h1>
+            <div class="total-container">
+                <span class="total-label">총 소비 금액</span>
+                <span id="total-price">0원</span>
+            </div>
+            <p id="date-display"></p>
+        </header>
+
+        <div class="input-section">
+            <input type="text" id="product-input" placeholder="제품명" autocomplete="off">
+            <input type="text" id="price-input" placeholder="가격" autocomplete="off">
+            <input type="text" id="budget-input" placeholder="예산" autocomplete="off">                          
+            <button id="add-btn">추가</button>
+        </div>
+
+        <ul id="shopping-list">
+            </ul>
+    </div>
+
+    <script src="./shoppinglist.js"></script>
+</body>
+</html>

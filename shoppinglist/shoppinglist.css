@@ -1,0 +1,254 @@
+/* General Reset & Background */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;     /* 세로 중앙 정렬 */
+    padding: 20px;
+}
+
+/* Container Design */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: #2d3436;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+header p {
+    color: #636e72;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dfe6e9;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-section input:focus {
+    border-color: #74b9ff;
+}
+
+#add-btn {
+    padding: 12px;
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.1s ease;
+}
+
+#add-btn:hover {
+    background-color: #00cec9;
+}
+
+#add-btn:active {
+    transform: scale(0.98);
+}
+
+.total-container {
+    margin-top: 20px;  
+    background-color: #f8f9fa; 
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); 
+}
+
+/* "총 지출" 라벨 */
+.total-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* 실제 합계 숫자 */
+#total-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #e63946; /* 강조를 위한 붉은 계열 */
+}
+
+/* Shopping List Items */
+#shopping-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.shopping-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8fbff; 
+    border: 1px solid #e1e8f0;  
+    border-radius: 12px;         
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03); 
+    animation: fadeIn 0.4s ease;
+    transition: all 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.shopping-item:last-child {
+    border-bottom: none;
+}
+
+.shopping-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background-color: #ffffff;
+}
+
+/* Checkbox Style */
+.shopping-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+/* Text Content */
+.product-text {
+    flex: 1; /* 남은 공간을 차지하여 금액들을 오른쪽으로 밀어냄 */
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2d3436;
+}
+.price-text, .budget-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px; /* 알약 모양 스타일 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+/* 가격 스타일: 파란색 계열 */
+.price-text {
+    color: #0984e3;
+    background-color: #e1f5fe;
+    margin-right: 8px;
+}
+
+/* 예산 스타일: 핑크색 계열 */
+.budget-text {
+    color: #e84393;
+    background-color: #fce4ec;
+    margin-right: 12px;
+}
+
+/* 가독성을 위해 앞에 라벨 붙여주기 (CSS 선택자 활용) */
+.price-text::before {
+    content: "가격 ";
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.budget-text::before {
+    content: "예산 ";
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.balance-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2ecc71; /* 잔액은 초록색 계열 */
+    background-color: #e8faf0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-right: 12px;
+}
+
+/* 라벨 자동 생성 */
+.balance-text::before {
+    content: "잔액 ";
+    font-size: 0.7rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+
+/* Completed State */
+
+.shopping-item.completed {
+    background-color: #f1f2f6;
+    border-color: #dfe4ea;
+    opacity: 0.8;
+}
+
+.shopping-item.completed .product-text {
+    text-decoration: line-through;
+    color: #b2bec3;
+}
+
+.shopping-item.completed .price-text {
+    color: #b2bec3;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #fff5f5;  
+    border: 1px solid #ffe3e3;
+    color: #ff7675;
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;         
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.delete-btn:hover {
+    background-color: #ff7675;
+    color: white;
+    border-color: #ff7675;
+}
