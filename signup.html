@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #signupForm {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        h2 {
+            margin: 0 0 10px 0;
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4dabf7;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #228be6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #1c7ed6;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="signupForm">
+        <h2>회원가입</h2>
+        <input type="text" id="username" placeholder="아이디" required>
+        <input type="password" id="password" placeholder="비밀번호" required>
+        <button type="submit">제출</button>
+    </form>
+
+    <script>
+        // This is Client-side logic in JavaScript
+        const signupForm = document.getElementById('signupForm');
+
+        signupForm.addEventListener('submit', event => {
+            // 1. 기본 동작(페이지 새로고침) 방지
+            event.preventDefault();
+
+            // 2. 값 추출
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // 3. 비즈니스 로직 (Frontend Validation 등)
+            console.log("Captured Data:");
+            console.log("ID: " + username);
+            console.log("PW: " + password);
+
+            alert("회원가입이 완료 되었습니다.");
+        });
+    </script>
+
+</body>
+</html>
